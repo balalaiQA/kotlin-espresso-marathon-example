@@ -28,6 +28,7 @@ marathon -m Marathonfile-targetOne.yaml
 ```
 
 ## Report:
+Note: Allure must be installed [locally](https://docs.qameta.io/allure/#_installing_a_commandline) 
 ```
 cd marathon
 allure serve
