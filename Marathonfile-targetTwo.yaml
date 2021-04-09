@@ -1,0 +1,33 @@
+name: "Target Two Application UI tests"
+outputDir: "./marathon"
+poolingStrategy:
+  - type: "omni"
+  - type: "device-model"
+  - type: "os-version"
+  - type: "manufacturer"
+  - type: "abi"
+filteringConfiguration:
+  allowlist:
+    - type: "annotation"
+      regex: ".*TargetTwo"
+retryStrategy:
+  type: "fixed-quota"
+  totalAllowedRetryQuota: 11
+  retryPerTestQuota: 0
+testClassRegexes:
+  - "^((?!Abstract).)*Test[s]*$"
+includeSerialRegexes: []
+excludeSerialRegexes: []
+ignoreFailures: false
+isCodeCoverageEnabled: false
+fallbackToScreenshots: false
+testOutputTimeoutMillis: 180000
+strictMode: false
+debug: true
+vendorConfiguration:
+  type: "Android"
+  applicationApk: "./app/build/outputs/apk/targetTwo/debug/app-targetTwo-debug.apk"
+  testApplicationApk: "./app/build/outputs/apk/androidTest/targetTwo/debug/app-targetTwo-debug-androidTest.apk"
+  autoGrantPermission: true
+  applicationPmClear: false
+  testApplicationPmClear: true
