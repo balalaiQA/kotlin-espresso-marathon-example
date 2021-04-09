@@ -41,19 +41,19 @@ class MainScreenTests: TestBase() {
         mainScreen.loginList.check(matches(hasChildCount(1)))
     }
 
-    @TargetTwo
+    @TargetOne
     @Test
     fun addNewTargetOneLoginTest() {
         mainScreen.loginInput.perform(typeText("login4"))
         mainScreen.addLoginButton.perform(click())
-        mainScreen.getLogin("login3").check(matches(isDisplayed()))
+        mainScreen.getLogin("login4").check(matches(isDisplayed()))
     }
 
-    @TargetOne
+    @TargetTwo
     @Test
     fun addNewTargetTwoLoginTest() {
         mainScreen.loginInput.perform(typeText("login5"))
         mainScreen.addLoginButton.perform(click())
-        mainScreen.getLogin("login4").check(matches(isDisplayed()))
+        mainScreen.getLogin("login5").check(matches(isDisplayed()))
     }
 }
